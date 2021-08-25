@@ -1,0 +1,20 @@
+body{
+    padding: 7rem;
+    background-color: #34495E;
+}
+
+h1{
+    font-family: sans-serif;
+    color: azure;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    height: fit-content;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}

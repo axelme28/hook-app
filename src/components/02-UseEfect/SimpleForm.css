@@ -1,0 +1,14 @@
+h1{
+    font-family: sans-serif;
+    color: white;
+}
+
+.title{
+    padding: 3rem;
+    background-color: #1ABC9C;
+    
+}
+
+.form{
+    margin: 2rem;
+}
