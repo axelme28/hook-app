@@ -1,20 +1,18 @@
 body{
-    padding: 7rem;
-    background-color: #34495E;
+    padding: 5em;
+   
 }
 
-h1{
-    font-family: sans-serif;
-    color: azure;
-    display: flex;
-    justify-content: center;
-}
 
 button{
-    height: fit-content;
+    margin-right: 1.5rem;
 }
-
 .buttons{
     display: flex;
     justify-content: space-around;
+}
+
+input{
+    max-width: 20rem;
+    margin-bottom: 1.5rem;
 }

@@ -1,34 +1,26 @@
 import React from 'react'
-import { useEffect,useState } from 'react';
-import { Message } from './Message';
+import { UseForm } from '../hooks/UseForm';
 import './SimpleForm.css'
-export const SimpleForm = () => {
+export const FormWithCustomHook = () => {
 
-    const [form, setform] = useState({
+    const [formValues, handleInputChamge] = UseForm({
         name :'',
-        email:''
+        email:'',
+        password:''
     })
 
-    const {name,email} = form;
-
-    useEffect(() => {
-        //console.log('hey!');
-    }, [])
+    const {name,email,password} = formValues;
         
-    const handleInputChamge = ({target}) =>{
-        setform({
-            ...form,
-            [target.name]:target.value
-        });   
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formValues);
     }
-
-    
     return (
         < div className = "margin:1rem">
             <div className = "title">
-            <h1>UseEffect</h1>
+            <h1>FormWithCustomHook</h1>
             </div>
-            <form className= "form">
+            <form className= "form" onSubmit = {handleSubmit}>
                 <div className = "form-grup mb-3">
                     <label className = "form-label">Name</label>
                     <input type = "text"
@@ -51,9 +43,20 @@ export const SimpleForm = () => {
                         value = {email}
                         onChange = {handleInputChamge}/>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <div className = "form-grup mb-3">
+                    <label>Password</label>
+                    <input type = "password"
+                        name = "password"
+                        className = "form-control"
+                        placeholder = "******"
+                        autoComplete = "off"
+                        value = {password}
+                        onChange = {handleInputChamge}/>
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
-            {(name === '123') && <Message/>}
+            
         </div>
     )
 }
